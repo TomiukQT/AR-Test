@@ -5,21 +5,23 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public Slider m_Red;
-    public Slider m_Green;
-    public Slider m_Blue;
+    public Slider m_ColorSlider;
+    public Slider m_SpeedSlider;
 
     public Material m_ShaderMat;
 
-    private void Update()
+    
+
+
+    public void ChangeColor()
     {
-        UpdateShaderColor();
+        float hue = m_ColorSlider.value;
+        m_ShaderMat.SetFloat("Hue", hue);
     }
 
-
-    void UpdateShaderColor()
+    public void ChangeSpeed()
     {
-        Color c = new Color(m_Red.value, m_Green.value, m_Blue.value);
-        m_ShaderMat.SetColor("Base_Color", c);
+        float speed = m_SpeedSlider.value;
+        m_ShaderMat.SetFloat("Anim_Speed", speed);
     }
 }

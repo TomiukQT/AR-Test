@@ -14,9 +14,5 @@ public class ColorPicker : MonoBehaviour
         m_ColorSlider = GetComponent<Slider>();
     }
 
-    public void ChangeColor()
-    {
-        float hue = m_ColorSlider.value;
-        m_TigerMat.SetFloat("Hue", hue);
-    }
+   
 }
